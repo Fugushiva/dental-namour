@@ -1,4 +1,14 @@
 {
-  "routes": ["/"],
-  "_comment": "Mis à jour à M2 avec les routes du site-plan §2"
+  "routes": [
+    "/",
+    "/cabinet",
+    "/equipe",
+    "/soins",
+    "/temoignages",
+    "/contact",
+    "/mentions-legales",
+    "/politique-confidentialite",
+    "/cookies"
+  ],
+  "_comment": "All 9 routes for Hermes smoke tests — updated M2"
 }
