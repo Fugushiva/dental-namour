@@ -8,6 +8,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { CookieBanner } from '@/components/layout/CookieBanner'
 import { SmoothScrollProvider } from '@/components/layout/SmoothScrollProvider'
+import { StructuredData } from '@/components/seo/StructuredData'
 
 const fraunces = Fraunces({
   variable: '--font-fraunces',
@@ -31,7 +32,73 @@ export const metadata: Metadata = {
   description:
     'Dental Clinic Namour à Bruxelles — Pr. Samir, Amaury et Mélanie Namour vous reçoivent en famille pour tous vos soins dentaires depuis plus de 20 ans.',
   robots: { index: false, follow: false },
+  alternates: {
+    canonical: 'https://dental-namour.vercel.app',
+  },
+  openGraph: {
+    title: 'Dental Clinic Namour | Dentiste à Bruxelles',
+    description:
+      'Trois générations de dentistes à Bruxelles. Cabinet familial, patients anxieux bienvenus.',
+    url: 'https://dental-namour.vercel.app',
+    siteName: 'Dental Clinic Namour',
+    images: [{ url: '/og?title=Dental+Clinic+Namour', width: 1200, height: 630 }],
+    locale: 'fr_BE',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Dental Clinic Namour | Dentiste à Bruxelles',
+    description:
+      'Trois générations de dentistes à Bruxelles. Cabinet familial, patients anxieux bienvenus.',
+    images: ['/og?title=Dental+Clinic+Namour'],
+  },
 }
+
+const globalSchemas = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Dentist',
+    name: 'Dental Clinic Namour',
+    description: 'Cabinet dentaire familial à Bruxelles — Pr. Samir, Amaury et Mélanie Namour',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rue Paul Spaak 3',
+      addressLocality: 'Bruxelles',
+      postalCode: '1000',
+      addressCountry: 'BE',
+    },
+    url: 'https://dental-namour.vercel.app',
+    openingHours: ['Mo-Fr 08:00-18:00', 'Sa 09:00-13:00'],
+    medicalSpecialty: [
+      'Dentistry',
+      'Implantology',
+      'Endodontics',
+      'Aesthetic Dentistry',
+      'Laser Dentistry',
+    ],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Dental Clinic Namour',
+    legalName: 'Namour Mélanie',
+    vatID: 'BE0562994037',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Rue Paul Spaak 3',
+      addressLocality: 'Bruxelles',
+      postalCode: '1000',
+      addressCountry: 'BE',
+    },
+    url: 'https://dental-namour.vercel.app',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Dental Clinic Namour',
+    url: 'https://dental-namour.vercel.app',
+  },
+]
 
 export default function RootLayout({
   children,
@@ -52,6 +119,7 @@ export default function RootLayout({
           <Analytics />
           <SpeedInsights />
         </SmoothScrollProvider>
+        <StructuredData data={globalSchemas} />
       </body>
     </html>
   )
