@@ -1,7 +1,15 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  trailingSlash: false,
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [{ key: 'X-Robots-Tag', value: 'noindex, nofollow' }],
+      },
+    ]
+  },
+}
 
-export default nextConfig;
+export default nextConfig

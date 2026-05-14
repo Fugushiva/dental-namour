@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+
+# Indexation désactivée — site en phase de prospection Hermes
+# À modifier manuellement après signature client
