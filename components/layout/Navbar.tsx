@@ -35,7 +35,7 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-40 transition-all duration-300',
+        'fixed top-8 left-0 right-0 z-40 transition-all duration-300',
         isScrolled ? 'bg-[oklch(98%_0.005_80)] shadow-sm' : 'bg-transparent'
       )}
     >

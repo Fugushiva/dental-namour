@@ -109,9 +109,17 @@ export default function RootLayout({
     <html lang="fr" className={`${fraunces.variable} ${inter.variable}`}>
       <body className="min-h-screen bg-[oklch(98%_0.005_80)] text-[oklch(18%_0.015_80)] font-sans antialiased flex flex-col">
         <SmoothScrollProvider>
+          <div
+            role="note"
+            aria-label="Avertissement démo"
+            className="fixed top-0 left-0 right-0 z-50 w-full bg-amber-50 border-b border-amber-200 text-amber-900 text-xs text-center py-1.5 px-4"
+          >
+            Démo non-officielle — proposition de refonte préparée par{' '}
+            <strong>Jérôme Delodder</strong>. Site non affilié à Dental Clinic Namour.
+          </div>
           <SkipNav />
           <Navbar />
-          <main id="main-content" className="flex-1 pt-16 md:pt-20">
+          <main id="main-content" className="flex-1 pt-24 md:pt-28">
             {children}
           </main>
           <Footer />

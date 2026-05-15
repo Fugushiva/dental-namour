@@ -16,6 +16,10 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <div className="bg-amber-50/90 px-4 py-2 text-center text-xs text-amber-900">
+        Démo non-officielle — proposition de refonte préparée par Jérôme Delodder. Site non affilié
+        à Dental Clinic Namour.
+      </div>
       <Hero />
       <TeamPreview />
       <Pillars />
